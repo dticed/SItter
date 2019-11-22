@@ -12,7 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'sitter/main.css' %}">
 
     {% if title %}
     <title>Sitter - {{ title }}</title>
@@ -38,7 +38,7 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="#">Login</a>
-                        <a class="nav-item nav-link" href="#">Register</a>
+                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                     </div>
                 </div>
             </div>
@@ -48,6 +48,13 @@
     <main role="main" class="container">
         <div class="row">
             <div class="col-md-8">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
                 {% block content %}{% endblock %}
             </div>
             <div class="col-md-4">
