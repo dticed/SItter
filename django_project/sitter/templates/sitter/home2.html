@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,400i,700,700i,900|Montserrat:400,700|PT+Serif'
+        rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href='{% static 'sitter/clear.css' %}'>
+    <link rel="stylesheet" type="text/css" href='{% static 'sitter/common.css' %}' />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'sitter/main.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="home" class="section intro-page">
+        <div class="block content-1170 center-relative center-text">
+            <img id="logo_si" class="top-logo" src="{% static 'images/si_logo.png' %}" alt="Boxus">
+            <br>
+            <h1 class="home-title">Plataforma Informativa do Instituto Federal do Ceará</span></h1>
+            <h6>
+                <p class="home-title2">Registre-se e tenha acesso às informações do seu campus.</p>
+            </h6>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <nav id="cor" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+            <div class="container">
+                <a class="navbar-brand mr-4" href="{% url 'sitter-home2' %}"><img
+                        src="{% static 'images/soldadinho.png' %}" alt="" height="25" width="52"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                    <div class="navbar-nav mr-auto">
+                    </div>
+                    <!-- Navbar Right Side -->
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+
+</html>

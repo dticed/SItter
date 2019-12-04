@@ -15,25 +15,27 @@
     <link rel="stylesheet" type="text/css" href="{% static 'sitter/main.css' %}">
 
     {% if title %}
-    <title>Sitter - {{ title }}</title>
+        <title>Sitter - {{ title }}</title>
     {% else %}
-    <title>Sitter</title>
+        <title>Sitter</title>
     {% endif %}
 </head>
 
 <body>
-    <header class="site-header">
-        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <header  class="site-header">
+        <nav id="cor" class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
             <div class="container">
-                <a class="navbar-brand mr-4" href="{% url 'sitter-home' %}">Sitter</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                {% if user.is_authenticated %}
+                    <a class="navbar-brand mr-4" href="{% url 'sitter-home' %}"><img src="{% static 'images/soldadinho.png' %}" alt="" height="25" width="52"></a>
+                {% else %}
+                    <a class="navbar-brand mr-4" href="{% url 'sitter-home2' %}"><img src="{% static 'images/soldadinho.png' %}" alt="" height="25" width="52"></a>
+                {% endif %}
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
                     aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href="{% url 'sitter-home' %}">Home</a>
-                        <a class="nav-item nav-link" href="{% url 'sitter-about' %}">About</a>
                     </div>
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
@@ -64,13 +66,12 @@
             </div>
             <div class="col-md-4">
                 <div class="content-section">
-                    <h3>IFCE Trending</h3>
-                    <p class='text-muted'>Assuntos mais curtidos
+                    <h3>Consulta</h3>
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Posts</li>
-                            <li class="list-group-item list-group-item-light">Announcements</li>
+                            <li class="list-group-item list-group-item-light"><a href="https://qacademico.ifce.edu.br/">Qacadêmico - IFCE</a></li>
+                            <li class="list-group-item list-group-item-light"><a href="http://www.yurilacerda.com/">Página do Professor Yuri</a></li>
                             <li class="list-group-item list-group-item-light"><a href="https://ifce.edu.br/calendarios">Calendário Acadêmico</a></li>
-                            <li class="list-group-item list-group-item-light">etc</li>
+                            <li class="list-group-item list-group-item-light">Link4</li>
                         </ul>
                     </p>
                 </div>
